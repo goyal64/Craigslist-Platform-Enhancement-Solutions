@@ -1,0 +1,45 @@
+import pandas as pd
+import datetime
+from datetime import datetime
+
+#phase 1
+df=pd.read_csv(r"aud_project.csv")
+df=df[['Title', 'date']]
+for i in range(0, len(df)):
+    df['date'][i]=datetime.strptime(df
+                            ['date'][i], '%Y-%m-%d')
+
+flag = []
+for i in range(0, len(df)):
+    if df['date'][i] < datetime.today():
+        flag.append('0')
+    else:
+        flag.append('1')
+
+df['flag'] = flag
+
+df.to_csv(r"C:\Users\\abhis\\aud_project\\aud_project_flagged.csv")
+
+
+#phase 2
+
+df_old = pd.read_csv(r"aud_project_old_listing.csv")
+df_old = df_old[['Title', 'date']]
+for i in range(0, len(df_old)):
+    df_old['date'][i] = datetime.strptime(df_old
+                            ['date'][i], '%Y-%m-%d')
+
+from dateutil.relativedelta import *
+use_date = datetime.today()
+use_date = use_date + relativedelta(days=-7)
+flag = []
+for i in range(0, len(df_old)):
+    if df_old['date'][i] < use_date:
+        flag.append('0')
+    else:
+        flag.append('1')
+
+df_old['flag'] = flag
+
+df_old.to_csv(r"C:\Users\\abhis\\aud_project\\aud_project_old_listing_flagged.csv")
+
