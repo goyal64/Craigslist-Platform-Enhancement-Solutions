@@ -1,18 +1,15 @@
 # Craigslist-Platform-Enhancement-Solutions
-Developed Python scripts to scrape data &amp; provided a lean product search system for Craigslist implementing deep learning models &amp; NLP; also implemented classification models to identify misclassified advertisements
+Developed Python scripts to scrape data &amp; provided a lean product search system for Craigslist implementing deep learning models &amp; NLP; also implemented classification models to identify misclassified advertisements.
 
-Part 1: Flagging expired event tickets
-1. Run the spider "notsonaivebayespart1scraper.py" from the terminal and extract the scraped ticket information in a csv
-2. Run "notsonaivebayespart1_2processing.py" in pycharm after loading the csv in the dataframe and the processing file generates a flag for expired event
+We aimed to maximize the opportunity Craigslist has in the form of better content curation to improve users' experience. Based on our analysis, we prioritized four critical problems:
+1. Expired event posts
+2. Old inactive posts
+3. The outdated product search system
+4. Misclassified advertisement.
 
-Part 2: Flagging old listings
-1. Run the spider "notsonaivebayespart2scraper.py" from the terminal and extract the scraped listing information in a csv
-2. Run "notsonaivebayespart1_2processing.py" in pycharm after loading the csv in the dataframe and the processing file generates a flag for old tickets based on the user input for the duration
+We propose solutions for each of these issues that can be implemented with both dynamic and static datasets.
+For the first two issues, we developed an algorithm that can identify listings that are expired or irrelevant. Furthermore, the criteria specifications can be specified by the Craigslist program/category managers, allowing them to make better-informed decisions.
 
-Part 3: Keyword Extraction
-1. Run the spider "notsonaivebayespart3scraper.py" and extract the data in a csv
-2. Load the csv file in "notsonaivebayespart3processing.py" and execute the code to get the top 5 matching advertisements based on user selection.
+To overcome the outdated product search system, we developed a lean product search system that would allow buyers to have a smoother experience in navigating the website pages. This should be effective in controlling the bounce rates and improve user traffic and engagement.
 
-Part 4: Misclassified Advertisements
-1. Run the spider "notsonaivebayespart4scraper.py" and extract the data in a csv
-2. Load the csv file in "notsonaivebayespart4model.py" and run the models to view the accuracy of the models
+Finally, for addressing the “misclassified advertisements,” we have developed a machine learning model that learns to sort listings and identify whether a listing is placed under the correct category or not.
